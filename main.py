@@ -16,30 +16,7 @@ maxY = 3
 x = 1
 y = 2
 
-grid = Grid(maxX, maxY, 90, 90, title='Tic Tac Toe', margin=1, framerate=2)
-
-"""grid[0, 0] = 'O'
-grid[1, 1] = 'X'
-grid[2, 1] = 'O'
-grid[2, 2] = 'X'"""
-
-"""def key_action(key):
-
-    global x, y
-    oldx, oldy = x, y
-    if key == pygame.K_LEFT and x > 0:
-        x = x - 1
-    if key == pygame.K_RIGHT and x < maxX-1:
-        x += 1
-
-    if key == pygame.K_DOWN and y < maxy-1:
-        y += 1
-    if key == pygame.K_UP and y > 0:
-        y -= 1
-    grid[oldx, oldy] = ''
-    grid[x, y] = 'O'
-
-grid.set_key_action(key_action)"""
+grid = Grid(maxX, maxY, 90, 90, title='Tic Tac Toe', margin=1, framerate=2, margincolor=(0,0,0), cellcolor=(32, 189, 129), itemcolor=(25, 51, 179), )
 
 
 class Dir(Enum):
@@ -109,8 +86,7 @@ def tick():
         print("¡El juego ha terminado!")
         pygame.quit()
         exit()
-
-
+grid[0, 0] = "*"
+grid[3, 1] = "*"
 grid.set_timer_action(tick)
-
 grid.run()
